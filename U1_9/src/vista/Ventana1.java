@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 import javax.swing.JFrame;
 
 import controlador.MenuKontroladorea;
+import modelo.OharrakKudeatu;
 
 import javax.swing.JButton;
 import java.awt.Font;
@@ -33,14 +34,17 @@ public class Ventana1 extends JFrame {
 		btnKargatuOharrak = new JButton("Kargatu Oharrak");
 		btnKargatuOharrak.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnKargatuOharrak.addActionListener(new ActionListener() {
-			@Override
+		
+		// Lehenengo Botoia. OHARRAK KARGATU
 			public void actionPerformed(ActionEvent e) {
-				try {
-					MenuKontroladorea.irakurriOharrak();
-				} catch (FileNotFoundException e1) {
-					e1.printStackTrace();
-				}
-				dispose();
+			
+					try {
+						OharrakKudeatu.irakurriOharrak();
+					} catch (FileNotFoundException e1) {
+				
+						e1.printStackTrace();
+					}
+				
 			}
 		});
 		btnKargatuOharrak.setBounds(180, 102, 245, 33);

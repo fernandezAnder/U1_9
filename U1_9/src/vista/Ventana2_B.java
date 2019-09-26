@@ -8,17 +8,23 @@ import javax.swing.*;
 import com.toedter.calendar.JDateChooser;
 
 import controlador.MenuKontroladorea;
+import modelo.Oharra;
+
+import java.awt.event.ActionListener;
+import java.security.Timestamp;
+import java.util.Calendar;
+import java.awt.event.ActionEvent;
 
 public class Ventana2_B extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	//panelan ikusten diren bariableak
 	private JTextField noriTxtF, NorkTxtF,tituluaTxtF, edukiaTxtF;
-	private JLabel lblData1, lblOrdua2, lblNori, lblNork, lblTitulua, lblEdukia;
-	private JComboBox orduaHCB1, orduaMinCB2;
+	private JLabel lblData1, lblNori, lblNork, lblTitulua, lblEdukia;
 	private JButton btnGorde, btnUtzi;
-	private JDateChooser data;
-	
+	private JDateChooser dateChooser= new JDateChooser();
+	//Timestamp fechaTimestamp = new Timestamp(System.currentTimeMillis());
+	private Calendar calendario = Calendar.getInstance();
 	private String[] hilabeteak = {"Urtarrila", "Otsaila", "Martxoa", "Apirila", "Maiatza",
 			"Ekaina", "Uztaila", "Abuztua", "Iraila", "Urria", "Azaroa", "Abendua"};
 	
@@ -41,38 +47,6 @@ public class Ventana2_B extends JFrame {
 		lblData1.setBounds(26, 36, 55, 17);
 		getContentPane().add(lblData1);
 		
-		data = new JDateChooser();
-		
-		
-		//ordua
-	
-		
-		orduaHCB1 = new JComboBox();
-		orduaHCB1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		orduaHCB1.setBounds(103, 80, 42, 20);
-		for (int i = 0; i < 24; i++) {
-			if (i<10) 
-				orduaHCB1.addItem("0"+i);
-			else
-				orduaHCB1.addItem(i);
-		}
-		getContentPane().add(orduaHCB1);
-		
-		lblOrdua2 = new JLabel(":");
-		lblOrdua2.setFont(new Font("Dialog", Font.BOLD, 20));
-		lblOrdua2.setBounds(155, 80, 15, 17);
-		getContentPane().add(lblOrdua2);
-		
-		orduaMinCB2 = new JComboBox();
-		orduaMinCB2.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		orduaMinCB2.setBounds(165, 80, 42, 20);
-		for (int i = 0; i < 24; i++) {
-			if (i<10) 
-				orduaMinCB2.addItem("0"+i);
-			else
-				orduaMinCB2.addItem(i);
-		}
-		getContentPane().add(orduaMinCB2);
 		
 		//nori
 		lblNori = new JLabel("Nori:");
@@ -118,8 +92,23 @@ public class Ventana2_B extends JFrame {
 		edukiaTxtF.setBounds(99, 269, 485, 258);
 		getContentPane().add(edukiaTxtF);
 		
+		
 		//botoiak
 		btnGorde = new JButton("Gorde");
+		btnGorde.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//String data= fechaTimestamp.toString();
+				String ordua=calendario.HOUR+":"+calendario.MINUTE;
+				String nori=noriTxtF.getText();
+				String nork=NorkTxtF.getText();
+				String titulua=tituluaTxtF.getText();
+				String edukia=edukiaTxtF.getText();
+				//Oharra oharra = new Oharra(data, ordua, nori, nork, titulua, edukia);
+				//System.out.println(oharra);
+				
+				
+			}
+		});
 		btnGorde.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnGorde.setBounds(406, 538, 87, 23);
 		getContentPane().add(btnGorde);
@@ -129,14 +118,9 @@ public class Ventana2_B extends JFrame {
 		btnUtzi.setBounds(503, 538, 67, 23);
 		getContentPane().add(btnUtzi);
 		
-		JDateChooser dateChooser = new JDateChooser();
+		
 		dateChooser.setBounds(99, 33, 95, 20);
 		getContentPane().add(dateChooser);
-		
-		JLabel lblOrdua = new JLabel("Ordua:");
-		lblOrdua.setFont(new Font("Dialog", Font.BOLD, 20));
-		lblOrdua.setBounds(26, 80, 79, 17);
-		getContentPane().add(lblOrdua);
 		
 		
 	}		
