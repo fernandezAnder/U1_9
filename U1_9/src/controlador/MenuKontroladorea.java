@@ -2,9 +2,14 @@ package controlador;
 
 
 
+import java.util.ArrayList;
+
+import modelo.Oharra;
+import modelo.OharrakKudeatu;
 import vista.*;
 
 public class MenuKontroladorea {
+	public static ArrayList<Oharra> lista_oharrak;
 	
 	public static void menua() {
 		Ventana1 Leiho1 = new Ventana1();
@@ -22,23 +27,17 @@ public class MenuKontroladorea {
 	}
 
 
-//	public void actionPerformed(ActionEvent e) {
-//		String komandoa= e.getActionCommand();
-//		switch (komandoa) {
-//			case "KARGATU":
-//				OharrakKudeatu.kargatuOharrakFitxategitik();
-//				break;
-//			case "GEHITU":
-//				new OharrenInprimakia();
-//				OharrakKudeatu.gehituOharra();
-//				break;
-//			case "Gorde":
-//				OharrakKudeatu.gordeOharrakFitxategian();
-//				break;
-//			case "INPRIMATU":
-//				new Inprimatu(OharrakKudeatu.imprimatuOharrak());
-//				break;	
-//			default: 
-//				
-//		}
+	public static void arrayabete(ArrayList<Oharra> oharrak) {
+
+			lista_oharrak = oharrak;
+		
+	}
+	public static void oharraGehitu(Oharra ohar) {
+		lista_oharrak.add(ohar);
+			System.out.println(lista_oharrak.get(lista_oharrak.size()-1));
+		
+	}
+	public static void oharrakIdatzi() {
+		OharrakKudeatu.gordeOharrak(lista_oharrak);
+	}
 }

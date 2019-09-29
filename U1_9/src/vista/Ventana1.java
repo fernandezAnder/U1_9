@@ -36,10 +36,12 @@ public class Ventana1 extends JFrame {
 		btnKargatuOharrak.addActionListener(new ActionListener() {
 		
 		// Lehenengo Botoia. OHARRAK KARGATU
+			@Override
 			public void actionPerformed(ActionEvent e) {
 			
 					try {
-						OharrakKudeatu.irakurriOharrak();
+						
+						MenuKontroladorea.arrayabete(OharrakKudeatu.irakurriOharrak());
 					} catch (FileNotFoundException e1) {
 				
 						e1.printStackTrace();
@@ -49,10 +51,13 @@ public class Ventana1 extends JFrame {
 		});
 		btnKargatuOharrak.setBounds(180, 102, 245, 33);
 		getContentPane().add(btnKargatuOharrak);
-
+		
+		//Bigarren Botoia
+		
 		btnGehituOharra = new JButton("Gehitu Oharra");
 		btnGehituOharra.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnGehituOharra.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				MenuKontroladorea.oharrenInprimakia();
 				dispose();
@@ -60,17 +65,30 @@ public class Ventana1 extends JFrame {
 		});
 		btnGehituOharra.setBounds(180, 163, 245, 33);
 		getContentPane().add(btnGehituOharra);
-
+		
+		//Hirugarren botoia
+		
 		btnGordeOharrak = new JButton("Gorde Oharrak");
+		btnGordeOharrak.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+				MenuKontroladorea.oharrakIdatzi();
+			}
+		});
 		btnGordeOharrak.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnGordeOharrak.setBounds(180, 220, 245, 33);
 		getContentPane().add(btnGordeOharrak);
 
+		//Laugarren botoia
+		
 		btnInprimatu = new JButton("Inprimatu");
 		btnInprimatu.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnInprimatu.setBounds(180, 276, 245, 33);
 		getContentPane().add(btnInprimatu);
 
+		//Azken botoia
+		
 		btnIrten = new JButton("Irten");
 		btnIrten.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnIrten.setBounds(180, 334, 245, 33);

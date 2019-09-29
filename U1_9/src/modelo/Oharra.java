@@ -1,6 +1,5 @@
 package modelo;
 
-import java.util.ArrayList;
 
 public class Oharra {
 	private String data, ordua, nori,nork, titulua, edukia;
@@ -20,6 +19,30 @@ public class Oharra {
 	public String toString() {
 		return "Ohar data=" + data + ", ordua=" + ordua + ", nori=" + nori + ", nork="
 				+ nork + ", titulua=" + titulua + ", edukia=" + edukia + "]";
+	}
+
+	public String getData() {
+		return data;
+	}
+
+	public String getOrdua() {
+		return ordua;
+	}
+
+	public String getNori() {
+		return nori;
+	}
+
+	public String getNork() {
+		return nork;
+	}
+
+	public String getTitulua() {
+		return titulua;
+	}
+
+	public String getEdukia() {
+		return edukia;
 	}
 
 }
