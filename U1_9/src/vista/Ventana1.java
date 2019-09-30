@@ -83,6 +83,11 @@ public class Ventana1 extends JFrame {
 		//Laugarren botoia
 		
 		btnInprimatu = new JButton("Inprimatu");
+		btnInprimatu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				MenuKontroladorea.inprimatu();
+			}
+		});
 		btnInprimatu.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnInprimatu.setBounds(180, 276, 245, 33);
 		getContentPane().add(btnInprimatu);

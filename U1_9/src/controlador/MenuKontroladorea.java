@@ -23,6 +23,7 @@ public class MenuKontroladorea {
 
 	public static void inprimatu() {
 		Ventana2_A Leiho3 = new Ventana2_A();
+		
 		Leiho3.setVisible(true);
 	}
 
